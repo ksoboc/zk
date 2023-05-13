@@ -1,20 +1,20 @@
-package com.zk.transactions;
+package com.zk.transactions.entities;
 
 public class Account {
     private double balance;
     private int creditCount;
     private int debitCount;
-    private String account;
+    private final String accountNr;
 
     public Account(String accountNr) {
-        this.account = accountNr;
+        this.accountNr = accountNr;
     }
 
     public Account(final String account, final int debitCount, final int creditCount, final double balance) {
         this.balance = balance;
         this.creditCount = creditCount;
         this.debitCount = debitCount;
-        this.account = account;
+        this.accountNr = account;
     }
 
     public void withDraw(double amount) {
@@ -33,7 +33,7 @@ public class Account {
                 "balance=" + balance +
                 ", creditCount=" + creditCount +
                 ", debitCount=" + debitCount +
-                ", account='" + account + '\'' +
+                ", account='" + accountNr + '\'' +
                 '}';
     }
 
@@ -55,8 +55,8 @@ public class Account {
     }
 
 
-    public String getAccount() {
-        return account;
+    public String getAccountNr() {
+        return accountNr;
     }
 
 }

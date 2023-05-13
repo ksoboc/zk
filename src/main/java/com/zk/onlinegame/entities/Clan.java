@@ -1,4 +1,4 @@
-package com.zk.game;
+package com.zk.onlinegame.entities;
 
 public record Clan(int numberOfPlayers, int points) {
 

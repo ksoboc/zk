@@ -1,5 +1,7 @@
-package com.zk.game;
+package com.zk.onlinegame;
 
+import com.zk.onlinegame.entities.Clan;
+import com.zk.onlinegame.services.GameService;
 import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,7 @@ class GameServiceTest {
     private GameService gameService;
 
     @Test
-    void gameServiceShouldReturnGroupsListAsInExample() throws Exception {
+    void gameServiceShouldReturnGroupsListAsInExample() {
 
         List<Clan> list = List.of(
                 new Clan(4, 50),

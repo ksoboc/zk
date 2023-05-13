@@ -1,12 +1,14 @@
-package com.zk.transactions;
+package com.zk.transactions.services;
 
+import com.zk.transactions.entities.Account;
+import com.zk.transactions.entities.Request;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
 public class TransactionServiceImpl implements TransactionService {
-    public List<Account> report( List<Request> requestList) {
+    public List<Account> report(List<Request> requestList) {
 
 
         Map<String, Account> accounts = new HashMap<>();
@@ -20,7 +22,7 @@ public class TransactionServiceImpl implements TransactionService {
         }
         List<Account> accountList = new ArrayList<>(accounts.size());
         accountList.addAll(accounts.values());
-        accountList.sort(Comparator.comparing(Account::getAccount));
+        accountList.sort(Comparator.comparing(Account::getAccountNr));
         return accountList;
     }
 

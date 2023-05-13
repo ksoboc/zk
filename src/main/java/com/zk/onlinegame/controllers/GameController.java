@@ -1,5 +1,8 @@
-package com.zk.game;
+package com.zk.onlinegame.controllers;
 
+import com.zk.onlinegame.entities.Clan;
+import com.zk.onlinegame.entities.ClansRequest;
+import com.zk.onlinegame.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

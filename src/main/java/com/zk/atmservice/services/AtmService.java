@@ -1,5 +1,7 @@
-package com.zk.atmservice;
+package com.zk.atmservice.services;
 
+import com.zk.atmservice.entities.Request;
+import com.zk.atmservice.entities.Response;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;
 

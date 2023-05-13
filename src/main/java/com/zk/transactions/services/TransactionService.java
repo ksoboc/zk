@@ -1,5 +1,7 @@
-package com.zk.transactions;
+package com.zk.transactions.services;
 
+import com.zk.transactions.entities.Account;
+import com.zk.transactions.entities.Request;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;
 

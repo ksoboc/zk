@@ -3,6 +3,11 @@ package com.zk.atmservice;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+import com.zk.atmservice.entities.Request;
+import com.zk.atmservice.entities.RequestType;
+import com.zk.atmservice.entities.Response;
+import com.zk.atmservice.services.AtmService;
+import com.zk.atmservice.services.AtmServiceImpl;
 import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +27,7 @@ class AtmServiceTest {
     private AtmService atmService;
 
     @Test
-    void atmServiceShouldReturnListOfAtmsToVisitFirstExample() throws Exception {
+    void atmServiceShouldReturnListOfAtmsToVisitFirstExample() {
         List<Request> requests = List.of(
                 new Request(4, RequestType.STANDARD, 1),
                 new Request(1, RequestType.STANDARD, 1),
@@ -49,7 +54,7 @@ class AtmServiceTest {
 
 
     @Test
-    void atmServiceShouldReturnListOfAtmsToVisitSecondExample() throws Exception {
+    void atmServiceShouldReturnListOfAtmsToVisitSecondExample()  {
         final AtmService atmService = new AtmServiceImpl();
         List<Request> requests = List.of(
                 new Request(1, RequestType.STANDARD, 2),

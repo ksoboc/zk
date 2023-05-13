@@ -1,9 +1,9 @@
-package com.zk.transactions;
+package com.zk.transactions.entities;
 
 public class Request {
-    private String debitAccount;
-    private String creditAccount;
-    private double amount;
+    private final String debitAccount;
+    private final String creditAccount;
+    private final double amount;
 
     public Request(String debitAccount, String creditAccount, double amount) {
         this.debitAccount = debitAccount;

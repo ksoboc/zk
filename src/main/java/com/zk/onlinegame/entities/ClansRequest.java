@@ -1,4 +1,4 @@
-package com.zk.game;
+package com.zk.onlinegame.entities;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
-package com.zk.game;
+package com.zk.onlinegame.services;
 
+import com.zk.onlinegame.entities.Clan;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;

@@ -1,4 +1,4 @@
-package com.zk.atmservice;
+package com.zk.atmservice.entities;
 
 import java.util.Objects;
 

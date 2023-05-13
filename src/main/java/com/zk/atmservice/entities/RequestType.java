@@ -1,4 +1,4 @@
-package com.zk.atmservice;
+package com.zk.atmservice.entities;
 
 public enum RequestType {
     STANDARD(3),

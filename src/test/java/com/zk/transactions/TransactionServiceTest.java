@@ -1,5 +1,8 @@
 package com.zk.transactions;
 
+import com.zk.transactions.entities.Account;
+import com.zk.transactions.entities.Request;
+import com.zk.transactions.services.TransactionService;
 import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +33,7 @@ class TransactionServiceTest {
         var response = transactionService.report(requests);
 
         for (int i=0;i< expectedResponse.size();++i) {
-            assertEquals(expectedResponse.get(i).getAccount(), response.get(i).getAccount());
+            assertEquals(expectedResponse.get(i).getAccountNr(), response.get(i).getAccountNr());
             assertEquals(expectedResponse.get(i).getDebitCount(), response.get(i).getDebitCount());
             assertEquals(expectedResponse.get(i).getCreditCount(), response.get(i).getCreditCount());
             assertEquals(expectedResponse.get(i).getBalance(), response.get(i).getBalance(), 0.001);
@@ -59,13 +62,13 @@ class TransactionServiceTest {
         Account account456 = accounts.get(1);
         Account account789 = accounts.get(2);
 
-        assertEquals("123", account123.getAccount());
+        assertEquals("123", account123.getAccountNr());
         assertEquals(-75.0, account123.getBalance(), 0.001);
 
-        assertEquals("456", account456.getAccount());
+        assertEquals("456", account456.getAccountNr());
         assertEquals(-175.0, account456.getBalance(), 0.001);
 
-        assertEquals("789", account789.getAccount());
+        assertEquals("789", account789.getAccountNr());
         assertEquals(250.0, account789.getBalance(), 0.001);
     }
 

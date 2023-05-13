@@ -1,5 +1,8 @@
-package com.zk.transactions;
+package com.zk.transactions.controllers;
 
+import com.zk.transactions.entities.Account;
+import com.zk.transactions.entities.Request;
+import com.zk.transactions.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

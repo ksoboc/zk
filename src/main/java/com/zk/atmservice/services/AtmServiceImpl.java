@@ -1,6 +1,8 @@
-package com.zk.atmservice;
+package com.zk.atmservice.services;
 
-import jakarta.validation.constraints.NotNull;
+import com.zk.atmservice.entities.Request;
+import com.zk.atmservice.entities.RequestType;
+import com.zk.atmservice.entities.Response;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -36,7 +38,6 @@ public class AtmServiceImpl implements AtmService {
         requestList.sort(requestComparator());
 
         List<Response> responses = new ArrayList<>(requestList.size());
-        int i = 0;
         for (var request : requestList) {
             responses.add(new Response(request.getRegion(), request.getAtmId()));
         }

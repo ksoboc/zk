@@ -1,5 +1,8 @@
-package com.zk.atmservice;
+package com.zk.atmservice.controllers;
 
+import com.zk.atmservice.entities.Request;
+import com.zk.atmservice.entities.Response;
+import com.zk.atmservice.services.AtmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

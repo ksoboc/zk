@@ -1,5 +1,6 @@
-package com.zk.game;
+package com.zk.onlinegame.services;
 
+import com.zk.onlinegame.entities.Clan;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
