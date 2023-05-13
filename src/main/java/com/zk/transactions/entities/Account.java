@@ -1,5 +1,7 @@
 package com.zk.transactions.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Account {
     private double balance;
     private int creditCount;
@@ -54,7 +56,7 @@ public class Account {
         return debitCount;
     }
 
-
+    @JsonProperty("account")
     public String getAccountNr() {
         return accountNr;
     }
