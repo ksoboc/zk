@@ -12,7 +12,7 @@ public class GameServiceImpl implements GameService {
             Comparator.comparingDouble(Clan::points).reversed()
                     .thenComparing(Clan::numberOfPlayers);
     @Override
-    public List<List<Clan>> calculate(final int groupCount, final List<Clan> clans) {
+    public List<List<Clan>> calculate(final int maxPlayersPerGroup, final List<Clan> clans) {
 
         PriorityQueue<Clan> priorityQueue = new PriorityQueue<>(clanComparator);
         priorityQueue.addAll(clans);
@@ -22,9 +22,9 @@ public class GameServiceImpl implements GameService {
             List<Clan> group = new ArrayList<>();
             int totalNrOfPlayers = 0;
             List<Clan> toBeRestored = new ArrayList<>();
-            while (!priorityQueue.isEmpty() && totalNrOfPlayers < groupCount) {
+            while (!priorityQueue.isEmpty() && totalNrOfPlayers < maxPlayersPerGroup) {
                 var clan = priorityQueue.poll();
-                if (clan.numberOfPlayers() + totalNrOfPlayers <= groupCount) {
+                if (clan.numberOfPlayers() + totalNrOfPlayers <= maxPlayersPerGroup) {
                     group.add(clan);
                     totalNrOfPlayers += clan.numberOfPlayers();
                 } else toBeRestored.add(clan);
