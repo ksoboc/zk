@@ -3,12 +3,15 @@ package com.zk.atmservice.services;
 import com.zk.atmservice.entities.Request;
 import com.zk.atmservice.entities.RequestType;
 import com.zk.atmservice.entities.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
 public class AtmServiceImpl implements AtmService {
+    Logger logger = LoggerFactory.getLogger(AtmServiceImpl.class);
     private Comparator<Request> requestComparator() {
         return Comparator.comparingInt(Request::getRegion)
                 .thenComparingInt(r -> r.getRequestType().getVal())
@@ -16,7 +19,7 @@ public class AtmServiceImpl implements AtmService {
     }
     @Override
     public List<Response> calculateOrder(List<Request> requests) {
-
+        logger.info("calculateOrder called");
         Map<Request, RequestType> requestMap = new HashMap<>();
         int reqNr = 0;
         for (var request : requests) {

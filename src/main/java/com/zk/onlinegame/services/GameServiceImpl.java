@@ -1,18 +1,21 @@
 package com.zk.onlinegame.services;
 
 import com.zk.onlinegame.entities.Clan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
 public class GameServiceImpl implements GameService {
-
+    Logger logger = LoggerFactory.getLogger(GameServiceImpl.class);
     private final Comparator<Clan> clanComparator =
             Comparator.comparingDouble(Clan::points).reversed()
                     .thenComparing(Clan::numberOfPlayers);
     @Override
     public List<List<Clan>> calculate(final int maxPlayersPerGroup, final List<Clan> clans) {
+        logger.info("calculate called");
 
         PriorityQueue<Clan> priorityQueue = new PriorityQueue<>(clanComparator);
         priorityQueue.addAll(clans);
